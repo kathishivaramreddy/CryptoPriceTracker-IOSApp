@@ -13,7 +13,8 @@ import SwiftyJSON
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
    
     let baseURL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
-    let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
+    let currencyData: [(name:String,symbol:String)] = [ ("AUD",  "$"), ("BRL","R$") ,("CAD","$"), ("CNY" , "¥"), ("EUR" , "€"), ("GBP" , "£"), ("HKD" , "$"), ("IDR" , "Rp"), ("ILS" , "₪"), ("INR",  "₹"), ("JPY" , "¥"), ("MXN" , "$"), ("NOK" , "kr"), ("NZD" , "$"), ("PLN" , "zł"), ("RON" , "lei"), ("RUB" , "₽"), ("SEK" , "kr"), ("SGD" , "$"), ("USD" , "$"), ("ZAR" , "R") ]
+   
     var finalURL = ""
     
     @IBOutlet weak var priceLabel: UILabel!
@@ -31,33 +32,33 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currencyArray.count
+        return currencyData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyArray[row]
+        return currencyData[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       getCryptoPrice(currency:currencyArray[row])
+        getCryptoPrice(currency:currencyData[row].name,symbol: currencyData[row].symbol)
     }
     
-    func getCryptoPrice(currency:String) {
+    func getCryptoPrice(currency:String,symbol : String) {
         finalURL = baseURL + currency
         print(finalURL)
         Alamofire.request(finalURL, method:.get).responseJSON {
             response in
             if response.result.isSuccess {
                 let price : JSON = JSON(response.result.value)
-                self.updatePriceData(json : price)
+                self.updatePriceData(json : price,symbol: symbol)
             }else{
                 self.priceLabel.text = "Connection Not Available"
             }
         }
     }
     
-    func updatePriceData(json : JSON){
-            priceLabel.text = json["last"].stringValue
+    func updatePriceData(json : JSON, symbol: String){
+            priceLabel.text = json["last"].stringValue + symbol
     }
     
 }

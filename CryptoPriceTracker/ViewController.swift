@@ -37,7 +37,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       
+       getCryptoPrice(currency:currencyArray[row])
+    }
+    
+    func getCryptoPrice(currency:String) {
+        finalURL = baseURL + currency
+        
     }
     
 }

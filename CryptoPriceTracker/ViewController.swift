@@ -49,10 +49,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             response in
             if response.result.isSuccess {
                 let price : JSON = JSON(response.result.value)
+                self.updatePriceData(json : price)
             }else{
-                self.priceLabel.text = "Not Available"
+                self.priceLabel.text = "Connection Not Available"
             }
         }
+    }
+    
+    func updatePriceData(json : JSON){
+            priceLabel.text = json["last"].stringValue
     }
     
 }

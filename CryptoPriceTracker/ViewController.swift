@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
    
@@ -42,7 +44,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func getCryptoPrice(currency:String) {
         finalURL = baseURL + currency
-        
+        print(finalURL)
+        Alamofire.request(finalURL, method:.get).responseJSON {
+            response in
+            if response.result.isSuccess {
+                let price : JSON = JSON(response.result.value)
+            }else{
+                self.priceLabel.text = "Not Available"
+            }
+        }
     }
     
 }

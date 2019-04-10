@@ -12,6 +12,7 @@
 		280B818C225E03E60050BE44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280B818A225E03E60050BE44 /* Main.storyboard */; };
 		280B8191225E03E80050BE44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280B818F225E03E80050BE44 /* LaunchScreen.storyboard */; };
 		280B8199225E04810050BE44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280B8198225E04800050BE44 /* Assets.xcassets */; };
+		280B819B225E5F270050BE44 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 280B819A225E5F270050BE44 /* .gitignore */; };
 		315371194646D1FDC627B9CC /* Pods_CryptoPriceTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CB6484BC049DF906B6BBC9 /* Pods_CryptoPriceTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		280B8190225E03E80050BE44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280B8192225E03E80050BE44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		280B8198225E04800050BE44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Downloads/BitcoinTicker-iOS12-master/BitcoinTicker/Assets.xcassets"; sourceTree = "<group>"; };
+		280B819A225E5F270050BE44 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = CryptoPriceTracker/.gitignore; sourceTree = "<group>"; };
 		47CB6484BC049DF906B6BBC9 /* Pods_CryptoPriceTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoPriceTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED9A2969C09A7D2A9495C13 /* Pods-CryptoPriceTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPriceTracker.release.xcconfig"; path = "Target Support Files/Pods-CryptoPriceTracker/Pods-CryptoPriceTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,13 +48,13 @@
 				1DA64B2D8BD56E53827579C2 /* Pods-CryptoPriceTracker.debug.xcconfig */,
 				8ED9A2969C09A7D2A9495C13 /* Pods-CryptoPriceTracker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		280B817A225E03E60050BE44 = {
 			isa = PBXGroup;
 			children = (
+				280B819A225E5F270050BE44 /* .gitignore */,
 				280B8185225E03E60050BE44 /* CryptoPriceTracker */,
 				280B8184225E03E60050BE44 /* Products */,
 				121D6E3A7ECC01F53A945C06 /* Pods */,
@@ -149,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280B819B225E5F270050BE44 /* .gitignore in Resources */,
 				280B8191225E03E80050BE44 /* LaunchScreen.storyboard in Resources */,
 				280B8199225E04810050BE44 /* Assets.xcassets in Resources */,
 				280B818C225E03E60050BE44 /* Main.storyboard in Resources */,
